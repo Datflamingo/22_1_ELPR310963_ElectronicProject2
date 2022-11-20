@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DA2_CHAM_CONG.Forms
 {
-    public partial class Remove : Form
+    public partial class formManagement : Form
     {
-        public Remove()
+        public formManagement()
         {
             InitializeComponent();
         }
