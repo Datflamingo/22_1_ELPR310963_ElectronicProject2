@@ -49,19 +49,22 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.AddEmployee = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.id1_txt = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.id2_txt = new System.Windows.Forms.TextBox();
-            this.id3_txt = new System.Windows.Forms.TextBox();
-            this.id4_txt = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.id2_txt = new System.Windows.Forms.TextBox();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.id3_txt = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.id4_txt = new System.Windows.Forms.TextBox();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -121,6 +124,7 @@
             this.discnn_Button.TabIndex = 5;
             this.discnn_Button.Text = "Disconnect";
             this.discnn_Button.UseVisualStyleBackColor = false;
+            this.discnn_Button.Click += new System.EventHandler(this.discnn_Button_Click);
             // 
             // cnn_Button
             // 
@@ -133,6 +137,7 @@
             this.cnn_Button.TabIndex = 4;
             this.cnn_Button.Text = "Connect";
             this.cnn_Button.UseVisualStyleBackColor = false;
+            this.cnn_Button.Click += new System.EventHandler(this.cnn_Button_Click);
             // 
             // baudRate_cbBox
             // 
@@ -277,41 +282,16 @@
             this.AddEmployee.Text = "Add Employee";
             this.AddEmployee.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // label7
             // 
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.id2_txt);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(778, 514);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Edit Employee";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.id3_txt);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(778, 514);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Remove Employee";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.label11);
-            this.tabPage3.Controls.Add(this.id4_txt);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(778, 514);
-            this.tabPage3.TabIndex = 3;
-            this.tabPage3.Text = "Inventory";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label7.Location = new System.Drawing.Point(259, 42);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(231, 29);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "ADD EMPLOYEE ";
             // 
             // label8
             // 
@@ -330,59 +310,110 @@
             this.id1_txt.Size = new System.Drawing.Size(265, 28);
             this.id1_txt.TabIndex = 4;
             // 
-            // label7
+            // tabPage2
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label7.Location = new System.Drawing.Point(214, 42);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(347, 29);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "EMPLOYEE ATTENDANCE";
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.id2_txt);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(778, 514);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Edit Employee";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // id2_txt
+            // label12
             // 
-            this.id2_txt.Location = new System.Drawing.Point(257, 246);
-            this.id2_txt.Name = "id2_txt";
-            this.id2_txt.Size = new System.Drawing.Size(265, 22);
-            this.id2_txt.TabIndex = 5;
-            // 
-            // id3_txt
-            // 
-            this.id3_txt.Location = new System.Drawing.Point(257, 246);
-            this.id3_txt.Name = "id3_txt";
-            this.id3_txt.Size = new System.Drawing.Size(265, 22);
-            this.id3_txt.TabIndex = 6;
-            // 
-            // id4_txt
-            // 
-            this.id4_txt.Location = new System.Drawing.Point(257, 246);
-            this.id4_txt.Name = "id4_txt";
-            this.id4_txt.Size = new System.Drawing.Size(265, 22);
-            this.id4_txt.TabIndex = 6;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(191, 113);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(112, 24);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Empoyee Id";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Location = new System.Drawing.Point(219, 50);
+            this.label9.Location = new System.Drawing.Point(266, 51);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(347, 29);
+            this.label9.Size = new System.Drawing.Size(227, 29);
             this.label9.TabIndex = 7;
-            this.label9.Text = "EMPLOYEE ATTENDANCE";
+            this.label9.Text = "EDIT EMPLOYEE";
+            // 
+            // id2_txt
+            // 
+            this.id2_txt.Location = new System.Drawing.Point(318, 115);
+            this.id2_txt.Name = "id2_txt";
+            this.id2_txt.Size = new System.Drawing.Size(265, 22);
+            this.id2_txt.TabIndex = 5;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.label10);
+            this.tabPage1.Controls.Add(this.id3_txt);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(778, 514);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "Remove Employee";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(199, 99);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(112, 24);
+            this.label13.TabIndex = 8;
+            this.label13.Text = "Empoyee Id";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(221, 42);
+            this.label10.Location = new System.Drawing.Point(252, 42);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(347, 29);
+            this.label10.Size = new System.Drawing.Size(282, 29);
             this.label10.TabIndex = 7;
-            this.label10.Text = "EMPLOYEE ATTENDANCE";
+            this.label10.Text = "REMOVE EMPLOYEE";
+            // 
+            // id3_txt
+            // 
+            this.id3_txt.Location = new System.Drawing.Point(317, 101);
+            this.id3_txt.Name = "id3_txt";
+            this.id3_txt.Size = new System.Drawing.Size(265, 22);
+            this.id3_txt.TabIndex = 6;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.label14);
+            this.tabPage3.Controls.Add(this.label11);
+            this.tabPage3.Controls.Add(this.id4_txt);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(778, 514);
+            this.tabPage3.TabIndex = 3;
+            this.tabPage3.Text = "Inventory";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(211, 104);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(112, 24);
+            this.label14.TabIndex = 8;
+            this.label14.Text = "Empoyee Id";
             // 
             // label11
             // 
@@ -395,6 +426,13 @@
             this.label11.TabIndex = 7;
             this.label11.Text = "INVENTORY";
             // 
+            // id4_txt
+            // 
+            this.id4_txt.Location = new System.Drawing.Point(329, 106);
+            this.id4_txt.Name = "id4_txt";
+            this.id4_txt.Size = new System.Drawing.Size(265, 22);
+            this.id4_txt.TabIndex = 6;
+            // 
             // formManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -405,6 +443,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "formManagement";
             this.Text = "Management";
+            this.Load += new System.EventHandler(this.formManagement_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -458,5 +497,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
     }
 }

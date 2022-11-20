@@ -26,6 +26,8 @@ namespace DA2_CHAM_CONG.Forms
             string[] BaudRate = { "1200", "2400", "4800", "9600", "19200", "38400", "57600", "115200" };
             baudRate_cbBox.Items.AddRange(BaudRate);
         }
+
+        //Time Configuration
         public string Time()
         {
             string str = DateTime.Now.ToString().Trim();
@@ -56,6 +58,10 @@ namespace DA2_CHAM_CONG.Forms
             int thismonthColumn = (((month - 1) * 2) + 6);
             return thismonthColumn;
         }
+
+
+        //Connect to Arduino
+        //Recieve Data
 
         String str_dataFromSerialPort_int64 = "";
         long ID;
@@ -107,6 +113,8 @@ namespace DA2_CHAM_CONG.Forms
             cnnStatus_label.ForeColor = Color.Red;
         }
 
+
+        //Form init
         private void formMain_Load(object sender, EventArgs e)
         {
             comPort_cbBox.DataSource = SerialPort.GetPortNames();

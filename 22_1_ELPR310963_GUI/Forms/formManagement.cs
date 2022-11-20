@@ -78,9 +78,11 @@ namespace DA2_CHAM_CONG.Forms
 
 
         //Form init
-        private void formMain_Load(object sender, EventArgs e)
+ 
+        private void formManagement_Load(object sender, EventArgs e)
         {
             comPort_cbBox.DataSource = SerialPort.GetPortNames();
             baudRate_cbBox.SelectedIndex = 3;
         }
+    }
 }
