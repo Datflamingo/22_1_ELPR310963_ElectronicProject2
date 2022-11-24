@@ -84,5 +84,6 @@ namespace DA2_CHAM_CONG.Forms
             comPort_cbBox.DataSource = SerialPort.GetPortNames();
             baudRate_cbBox.SelectedIndex = 3;
         }
+
     }
 }
