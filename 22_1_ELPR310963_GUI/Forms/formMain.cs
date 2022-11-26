@@ -26,6 +26,8 @@ namespace DA2_CHAM_CONG.Forms
             string[] BaudRate = { "1200", "2400", "4800", "9600", "19200", "38400", "57600", "115200" };
             baudRate_cbBox.Items.AddRange(BaudRate);
         }
+
+        //Time Configuration
         public string Time()
         {
             string str = DateTime.Now.ToString().Trim();
@@ -57,6 +59,10 @@ namespace DA2_CHAM_CONG.Forms
             return thismonthColumn;
         }
 
+
+        //Connect to Arduino
+        //Recieve Data
+
         String str_dataFromSerialPort_int64 = "";
         long ID;
 
@@ -87,14 +93,33 @@ namespace DA2_CHAM_CONG.Forms
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void cnn_Button_Click(object sender, EventArgs e)
+        {
+            if (!serialPort1.IsOpen)
+            {
+                serialPort1.PortName = comPort_cbBox.Text;
+                serialPort1.BaudRate = Convert.ToInt32(baudRate_cbBox.Text);
+                serialPort1.Open();
+                cnnStatus_label.Text = ("Connected");
+                cnnStatus_label.ForeColor = Color.Green;
+            }
+
+        }
+
+        private void discnn_Button_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            cnnStatus_label.Text = ("Disconnected");
+            cnnStatus_label.ForeColor = Color.Red;
+        }
+
+
+        //Form init
+        private void formMain_Load(object sender, EventArgs e)
         {
             comPort_cbBox.DataSource = SerialPort.GetPortNames();
             baudRate_cbBox.SelectedIndex = 3;
-        }
 
-        private void formMain_Load(object sender, EventArgs e)
-        {
             string amWT = "07:00:00";
             DateTime amTime = DateTime.ParseExact(amWT, "HH:mm:ss", null);
             amWorkingTime_txt.Text = amTime.ToString();
@@ -111,7 +136,7 @@ namespace DA2_CHAM_CONG.Forms
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.cnnStr))
             {
-                const string sql = "select * from QLHH_main where id = @id";
+                const string sql = "select * from ATTENDANCE where id = @id";
                 using (SqlCommand sqlCommand = new SqlCommand(sql, connection))
                 {
                     sqlCommand.Parameters.AddWithValue("@id", ID);
@@ -249,6 +274,9 @@ namespace DA2_CHAM_CONG.Forms
 
                 }
             }
+            emplBUS.attendacne(str_dataFromSerialPort_int64, datesAfter[0], datesAfter[1], datesAfter[2], datesAfter[3], datesAfter[4], datesAfter[5], datesAfter[6], datesAfter[7], datesAfter[8], datesAfter[9], datesAfter[10], datesAfter[11]);
         }
+
+        
     }
 }

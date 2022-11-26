@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -59,7 +60,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -140,6 +140,7 @@
             this.discnn_Button.TabIndex = 5;
             this.discnn_Button.Text = "Disconnect";
             this.discnn_Button.UseVisualStyleBackColor = false;
+            this.discnn_Button.Click += new System.EventHandler(this.discnn_Button_Click);
             // 
             // cnn_Button
             // 
@@ -152,6 +153,7 @@
             this.cnn_Button.TabIndex = 4;
             this.cnn_Button.Text = "Connect";
             this.cnn_Button.UseVisualStyleBackColor = false;
+            this.cnn_Button.Click += new System.EventHandler(this.cnn_Button_Click);
             // 
             // baudRate_cbBox
             // 
@@ -203,6 +205,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(318, 351);
             this.panel1.TabIndex = 4;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(16, 189);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // label6
             // 
@@ -335,13 +344,6 @@
             this.id_txt.Size = new System.Drawing.Size(265, 22);
             this.id_txt.TabIndex = 0;
             this.id_txt.TextChanged += new System.EventHandler(this.id_txt_TextChanged);
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(16, 189);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker1.TabIndex = 6;
             // 
             // formMain
             // 
