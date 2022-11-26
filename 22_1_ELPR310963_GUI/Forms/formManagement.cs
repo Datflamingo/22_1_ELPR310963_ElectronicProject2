@@ -8,8 +8,10 @@ using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace DA2_CHAM_CONG.Forms
 {
@@ -44,6 +46,9 @@ namespace DA2_CHAM_CONG.Forms
                 str_dataFromSerialPort_int64 = InputData;
                 ID = Convert.ToInt64(str_dataFromSerialPort_int64);
                 this.id1_txt.Text += text;
+                id2_txt.Text = id1_txt.Text;
+                id3_txt.Text = id1_txt.Text;
+                id4_txt.Text = id1_txt.Text;
             }
 
         }
@@ -139,6 +144,85 @@ namespace DA2_CHAM_CONG.Forms
         {
             var emplBUS = new daos.employeeBUS();
             emplBUS.removeEmp(id2_txt.Text);
+            GetAllInformation();
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            DialogResult msg = MessageBox.Show("Do you want to edit this employee?", "Message", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information);
+            if (msg == DialogResult.Yes)
+            {
+                var emplBUS = new daos.employeeBUS();
+                emplBUS.addEmp(id2_txt.Text, name2_txt.Text, phone2_txt.Text, email2_txt.Text, "14000000");
+                id2_txt.Clear();
+                name2_txt.Clear();
+                phone2_txt.Clear();
+                email2_txt.Clear();
+                GetAllInformation();
+            }
+        }
+
+        private void checkid2_txt_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            var emplBUS = new daos.employeeBUS();
+            dt = emplBUS.CheckEmp(id2_txt.Text);
+            int i = 0;
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    string temp;
+                    temp = item.ToString();
+                    switch (i)
+                    {
+                        case 0:
+                            break;
+                        case 1:
+                            name2_txt.Text = temp;
+                            break;
+                        case 2:
+                            phone2_txt.Text = temp;
+                            break;
+                        case 3:
+                            email2_txt.Text = temp;
+                            break;
+                    }
+                    i++;
+                }
+            }
+            GetAllInformation();
+        }
+
+        private void checkid3_txt_Click(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            var emplBUS = new daos.employeeBUS();
+            dt = emplBUS.CheckEmp(id3_txt.Text);
+            int i = 0;
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    string temp;
+                    temp = item.ToString();
+                    switch (i)
+                    {
+                        case 0:
+                            break;
+                        case 1:
+                            name3_txt.Text = temp;
+                            break;
+                        case 2:
+                            phone3_txt.Text = temp;
+                            break;
+                        case 3:
+                            email3_txt.Text = temp;
+                            break;
+                    }
+                    i++;
+                }
+            }
             GetAllInformation();
         }
     }

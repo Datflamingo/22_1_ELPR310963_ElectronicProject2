@@ -83,22 +83,24 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.id3_txt = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.phone4_txt = new System.Windows.Forms.TextBox();
+            this.email4_txt = new System.Windows.Forms.TextBox();
+            this.name4_txt = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.id4_txt = new System.Windows.Forms.TextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.checkid3_txt = new System.Windows.Forms.Button();
+            this.checkid2_txt = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -419,6 +421,7 @@
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.checkid2_txt);
             this.panel9.Controls.Add(this.dataGridView2);
             this.panel9.Controls.Add(this.edit_btn);
             this.panel9.Controls.Add(this.phone2_txt);
@@ -445,12 +448,13 @@
             // edit_btn
             // 
             this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.edit_btn.Location = new System.Drawing.Point(151, 136);
+            this.edit_btn.Location = new System.Drawing.Point(341, 136);
             this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(414, 30);
+            this.edit_btn.Size = new System.Drawing.Size(224, 30);
             this.edit_btn.TabIndex = 12;
             this.edit_btn.Text = "APPLY";
             this.edit_btn.UseVisualStyleBackColor = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // phone2_txt
             // 
@@ -547,7 +551,7 @@
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Controls.Add(this.label11);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.textBox2);
+            this.panel6.Controls.Add(this.id3_txt);
             this.panel6.Location = new System.Drawing.Point(9, 8);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(760, 498);
@@ -555,6 +559,7 @@
             // 
             // panel10
             // 
+            this.panel10.Controls.Add(this.checkid3_txt);
             this.panel10.Controls.Add(this.dataGridView3);
             this.panel10.Controls.Add(this.remove_btn);
             this.panel10.Controls.Add(this.phone3_txt);
@@ -581,9 +586,9 @@
             // remove_btn
             // 
             this.remove_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remove_btn.Location = new System.Drawing.Point(151, 136);
+            this.remove_btn.Location = new System.Drawing.Point(342, 136);
             this.remove_btn.Name = "remove_btn";
-            this.remove_btn.Size = new System.Drawing.Size(414, 30);
+            this.remove_btn.Size = new System.Drawing.Size(223, 30);
             this.remove_btn.TabIndex = 12;
             this.remove_btn.Text = "REMOVE";
             this.remove_btn.UseVisualStyleBackColor = true;
@@ -661,12 +666,12 @@
             this.label12.TabIndex = 5;
             this.label12.Text = "Empoyee Id";
             // 
-            // textBox2
+            // id3_txt
             // 
-            this.textBox2.Location = new System.Drawing.Point(322, 84);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(265, 22);
-            this.textBox2.TabIndex = 4;
+            this.id3_txt.Location = new System.Drawing.Point(322, 84);
+            this.id3_txt.Name = "id3_txt";
+            this.id3_txt.Size = new System.Drawing.Size(265, 22);
+            this.id3_txt.TabIndex = 4;
             // 
             // tabPage3
             // 
@@ -684,7 +689,7 @@
             this.panel7.Controls.Add(this.panel11);
             this.panel7.Controls.Add(this.label13);
             this.panel7.Controls.Add(this.label14);
-            this.panel7.Controls.Add(this.textBox3);
+            this.panel7.Controls.Add(this.id4_txt);
             this.panel7.Location = new System.Drawing.Point(9, 8);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(760, 498);
@@ -694,9 +699,9 @@
             // 
             this.panel11.Controls.Add(this.button1);
             this.panel11.Controls.Add(this.dataGridView4);
-            this.panel11.Controls.Add(this.textBox10);
-            this.panel11.Controls.Add(this.textBox11);
-            this.panel11.Controls.Add(this.textBox12);
+            this.panel11.Controls.Add(this.phone4_txt);
+            this.panel11.Controls.Add(this.email4_txt);
+            this.panel11.Controls.Add(this.name4_txt);
             this.panel11.Controls.Add(this.label24);
             this.panel11.Controls.Add(this.label25);
             this.panel11.Controls.Add(this.label26);
@@ -725,26 +730,26 @@
             this.dataGridView4.Size = new System.Drawing.Size(693, 150);
             this.dataGridView4.TabIndex = 13;
             // 
-            // textBox10
+            // phone4_txt
             // 
-            this.textBox10.Location = new System.Drawing.Point(300, 53);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(265, 22);
-            this.textBox10.TabIndex = 11;
+            this.phone4_txt.Location = new System.Drawing.Point(300, 53);
+            this.phone4_txt.Name = "phone4_txt";
+            this.phone4_txt.Size = new System.Drawing.Size(265, 22);
+            this.phone4_txt.TabIndex = 11;
             // 
-            // textBox11
+            // email4_txt
             // 
-            this.textBox11.Location = new System.Drawing.Point(300, 90);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(265, 22);
-            this.textBox11.TabIndex = 10;
+            this.email4_txt.Location = new System.Drawing.Point(300, 90);
+            this.email4_txt.Name = "email4_txt";
+            this.email4_txt.Size = new System.Drawing.Size(265, 22);
+            this.email4_txt.TabIndex = 10;
             // 
-            // textBox12
+            // name4_txt
             // 
-            this.textBox12.Location = new System.Drawing.Point(300, 9);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(265, 22);
-            this.textBox12.TabIndex = 9;
+            this.name4_txt.Location = new System.Drawing.Point(300, 9);
+            this.name4_txt.Name = "name4_txt";
+            this.name4_txt.Size = new System.Drawing.Size(265, 22);
+            this.name4_txt.TabIndex = 9;
             // 
             // label24
             // 
@@ -797,12 +802,34 @@
             this.label14.TabIndex = 5;
             this.label14.Text = "Empoyee Id";
             // 
-            // textBox3
+            // id4_txt
             // 
-            this.textBox3.Location = new System.Drawing.Point(322, 84);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(265, 22);
-            this.textBox3.TabIndex = 4;
+            this.id4_txt.Location = new System.Drawing.Point(322, 84);
+            this.id4_txt.Name = "id4_txt";
+            this.id4_txt.Size = new System.Drawing.Size(265, 22);
+            this.id4_txt.TabIndex = 4;
+            // 
+            // checkid3_txt
+            // 
+            this.checkid3_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkid3_txt.Location = new System.Drawing.Point(151, 136);
+            this.checkid3_txt.Name = "checkid3_txt";
+            this.checkid3_txt.Size = new System.Drawing.Size(185, 30);
+            this.checkid3_txt.TabIndex = 14;
+            this.checkid3_txt.Text = "CHECK ID";
+            this.checkid3_txt.UseVisualStyleBackColor = true;
+            this.checkid3_txt.Click += new System.EventHandler(this.checkid3_txt_Click);
+            // 
+            // checkid2_txt
+            // 
+            this.checkid2_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkid2_txt.Location = new System.Drawing.Point(150, 136);
+            this.checkid2_txt.Name = "checkid2_txt";
+            this.checkid2_txt.Size = new System.Drawing.Size(185, 30);
+            this.checkid2_txt.TabIndex = 15;
+            this.checkid2_txt.Text = "CHECK ID";
+            this.checkid2_txt.UseVisualStyleBackColor = true;
+            this.checkid2_txt.Click += new System.EventHandler(this.checkid2_txt_Click);
             // 
             // formManagement
             // 
@@ -879,11 +906,11 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox id3_txt;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox id4_txt;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button ADD_btn;
@@ -913,12 +940,14 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox phone4_txt;
+        private System.Windows.Forms.TextBox email4_txt;
+        private System.Windows.Forms.TextBox name4_txt;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button checkid3_txt;
+        private System.Windows.Forms.Button checkid2_txt;
     }
 }
