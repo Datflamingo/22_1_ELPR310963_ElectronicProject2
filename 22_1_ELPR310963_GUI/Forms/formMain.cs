@@ -136,7 +136,7 @@ namespace DA2_CHAM_CONG.Forms
 
             using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.cnnStr))
             {
-                const string sql = "select * from QLHH_main where id = @id";
+                const string sql = "select * from ATTENDANCE where id = @id";
                 using (SqlCommand sqlCommand = new SqlCommand(sql, connection))
                 {
                     sqlCommand.Parameters.AddWithValue("@id", ID);

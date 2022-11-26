@@ -314,6 +314,7 @@
             this.ADD_btn.TabIndex = 12;
             this.ADD_btn.Text = "ADD";
             this.ADD_btn.UseVisualStyleBackColor = true;
+            this.ADD_btn.Click += new System.EventHandler(this.ADD_btn_Click);
             // 
             // phone1_txt
             // 
@@ -586,6 +587,7 @@
             this.remove_btn.TabIndex = 12;
             this.remove_btn.Text = "REMOVE";
             this.remove_btn.UseVisualStyleBackColor = true;
+            this.remove_btn.Click += new System.EventHandler(this.remove_btn_Click);
             // 
             // phone3_txt
             // 

@@ -1,7 +1,9 @@
-﻿using System;
+﻿using DA2_CHAM_CONG.daos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
@@ -85,5 +87,59 @@ namespace DA2_CHAM_CONG.Forms
             baudRate_cbBox.SelectedIndex = 3;
         }
 
+        private void GetAllInformation()
+        {
+            DataSet data = new DataSet();
+
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.cnnStr))
+            {
+                const string sql = "select * from ATTENDANCE where id = @id";
+                using (SqlCommand sqlCommand = new SqlCommand(sql, connection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@id", ID);
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(dataReader);
+                            this.dataGridView1.DataSource = dt;
+                            this.dataGridView2.DataSource = dt;
+                            this.dataGridView3.DataSource = dt;
+                            this.dataGridView4.DataSource = dt;
+                            dataReader.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+        }
+
+
+        private void ADD_btn_Click(object sender, EventArgs e)
+        {
+            var emplBUS = new daos.employeeBUS();
+            emplBUS.addEmp(id1_txt.Text, name1_txt.Text, phone1_txt.Text, email1_txt.Text, "14000000");
+            id1_txt.Clear();
+            name1_txt.Clear();
+            phone1_txt.Clear();
+            email1_txt.Clear();
+            GetAllInformation();
+        }
+
+        private void remove_btn_Click(object sender, EventArgs e)
+        {
+            var emplBUS = new daos.employeeBUS();
+            emplBUS.removeEmp(id2_txt.Text);
+            GetAllInformation();
+        }
     }
 }
