@@ -42,7 +42,7 @@ namespace DA2_CHAM_CONG.Forms
             int year = Convert.ToInt16(str_year);
             return str_day + '/' + str_month + '/' + str_year + ' ' + str_hour + ':' + str_minute + ':' + str_second;
         }
-        public int ThisMonth()
+        public int count()
         {
             string str = DateTime.Now.ToString().Trim();
             string str_month = str.Substring(0, 2);
@@ -202,7 +202,7 @@ namespace DA2_CHAM_CONG.Forms
             DataTable dt = new DataTable();
             var emplBUS = new daos.employeeBUS();
             dt = emplBUS.CheckEmp(str_dataFromSerialPort_int64);
-            int thisMonth = 0;
+            int count = 0;
             int thisMonthRef = VirtualThisMonth();
             foreach (DataRow dataRow in dt.Rows)
             {
@@ -210,7 +210,7 @@ namespace DA2_CHAM_CONG.Forms
                 {
                     string temp;
                     temp = item.ToString();
-                    switch (thisMonth)
+                    switch (count)
                     {
                         case 0:
                             break;
@@ -226,7 +226,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 6:
                             datesBefore[0] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[0] = Convert.ToInt16(datesBefore[0]) + 1;
                             }
@@ -239,7 +239,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 8:
                             datesBefore[1] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[1] = Convert.ToInt16(datesBefore[1]) + 1;
                             }
@@ -252,7 +252,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 10:
                             datesBefore[2] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[2] = Convert.ToInt16(datesBefore[2]) + 1;
                             }
@@ -265,7 +265,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 12:
                             datesBefore[3] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[3] = Convert.ToInt16(datesBefore[3]) + 1;
                             }
@@ -278,7 +278,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 14:
                             datesBefore[4] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[4] = Convert.ToInt16(datesBefore[4]) + 1;
                             }
@@ -291,7 +291,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 16:
                             datesBefore[5] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[5] = Convert.ToInt16(datesBefore[5]) + 1;
                             }
@@ -304,7 +304,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 18:
                             datesBefore[6] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[6] = Convert.ToInt16(datesBefore[6]) + 1;
                             }
@@ -317,7 +317,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 20:
                             datesBefore[7] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[7] = Convert.ToInt16(datesBefore[7]) + 1;
                             }
@@ -330,7 +330,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 22:
                             datesBefore[8] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[8] = Convert.ToInt16(datesBefore[8]) + 1;
                             }
@@ -343,7 +343,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 24:
                             datesBefore[9] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[9] = Convert.ToInt16(datesBefore[9]) + 1;
                             }
@@ -356,7 +356,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 26:
                             datesBefore[10] = temp;
-                            if (thisMonth == thisMonthRef)
+                            if (count == thisMonthRef)
                             {
                                 LastDates[10] = Convert.ToInt16(datesBefore[10]) + 1;
                             }
@@ -369,7 +369,7 @@ namespace DA2_CHAM_CONG.Forms
                             break;
                         case 28:
                             datesBefore[11] = temp;
-                            if(thisMonth == thisMonthRef)
+                            if(count == thisMonthRef)
                             {
                                 LastDates[11] = Convert.ToInt16(datesBefore[11]) + 1;
                             }
@@ -379,7 +379,7 @@ namespace DA2_CHAM_CONG.Forms
                             }
                             break;
                     }
-                    thisMonth++;
+                    count++;
 
                     //Assign data for each month
                     datesAfter[0] = Convert.ToString(LastDates[0]);
@@ -403,6 +403,29 @@ namespace DA2_CHAM_CONG.Forms
         private void setTime_btn_Click(object sender, EventArgs e)
         {
             timeCheckIn_txt.Text = VirtualTime();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            formManagement openOtherForm = new formManagement();
+            this.Hide();
+            openOtherForm.ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            AboutMe openOtherForm = new AboutMe();
+            this.Hide();
+            openOtherForm.ShowDialog();
+            this.Close();
         }
     }
 }

@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO.Ports;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,6 +26,8 @@ namespace DA2_CHAM_CONG.Forms
             serialPort1.DataReceived += new SerialDataReceivedEventHandler(DataReceive);
             string[] BaudRate = { "1200", "2400", "4800", "9600", "19200", "38400", "57600", "115200" };
             baudRate_cbBox.Items.AddRange(BaudRate);
+            string[] month_cb = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" };
+            month_cbBox.Items.AddRange(month_cb);
         }
 
         //Connect to Arduino
@@ -90,6 +93,7 @@ namespace DA2_CHAM_CONG.Forms
         {
             comPort_cbBox.DataSource = SerialPort.GetPortNames();
             baudRate_cbBox.SelectedIndex = 3;
+            month_cbBox.SelectedIndex = 0;
         }
 
         private void GetAllInformation()
@@ -112,7 +116,6 @@ namespace DA2_CHAM_CONG.Forms
                             this.dataGridView1.DataSource = dt;
                             this.dataGridView2.DataSource = dt;
                             this.dataGridView3.DataSource = dt;
-                            this.dataGridView4.DataSource = dt;
                             dataReader.Close();
                         }
                     }
@@ -134,6 +137,9 @@ namespace DA2_CHAM_CONG.Forms
             var emplBUS = new daos.employeeBUS();
             emplBUS.addEmp(id1_txt.Text, name1_txt.Text, phone1_txt.Text, email1_txt.Text, "14000000");
             id1_txt.Clear();
+            id2_txt.Clear();
+            id3_txt.Clear();
+            id4_txt.Clear();
             name1_txt.Clear();
             phone1_txt.Clear();
             email1_txt.Clear();
@@ -144,7 +150,10 @@ namespace DA2_CHAM_CONG.Forms
         {
             var emplBUS = new daos.employeeBUS();
             emplBUS.removeEmp(id2_txt.Text);
+            id1_txt.Clear();
+            id2_txt.Clear();
             id3_txt.Clear();
+            id4_txt.Clear();
             GetAllInformation();
         }
 
@@ -155,7 +164,10 @@ namespace DA2_CHAM_CONG.Forms
             {
                 var emplBUS = new daos.employeeBUS();
                 emplBUS.addEmp(id2_txt.Text, name2_txt.Text, phone2_txt.Text, email2_txt.Text, "14000000");
+                id1_txt.Clear();
                 id2_txt.Clear();
+                id3_txt.Clear();
+                id4_txt.Clear();
                 name2_txt.Clear();
                 phone2_txt.Clear();
                 email2_txt.Clear();
@@ -165,6 +177,9 @@ namespace DA2_CHAM_CONG.Forms
 
         private void checkid2_txt_Click(object sender, EventArgs e)
         {
+            id1_txt.Clear();
+            id3_txt.Clear();
+            id4_txt.Clear();
             DataTable dt = new DataTable();
             var emplBUS = new daos.employeeBUS();
             dt = emplBUS.CheckEmp(id2_txt.Text);
@@ -197,6 +212,9 @@ namespace DA2_CHAM_CONG.Forms
 
         private void checkid3_txt_Click(object sender, EventArgs e)
         {
+            id1_txt.Clear();
+            id2_txt.Clear();
+            id4_txt.Clear();
             DataTable dt = new DataTable();
             var emplBUS = new daos.employeeBUS();
             dt = emplBUS.CheckEmp(id3_txt.Text);
@@ -227,5 +245,205 @@ namespace DA2_CHAM_CONG.Forms
             GetAllInformation();
         }
 
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            formMain openOtherForm = new formMain();
+            this.Hide();
+            openOtherForm.ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void About_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            AboutMe openOtherForm = new AboutMe();
+            this.Hide();
+            openOtherForm.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            id5_txt.Clear();
+            name4_txt.Clear();
+            phone4_txt.Clear();
+            email4_txt.Clear();
+            DataTable dt = new DataTable();
+            var emplBUS = new daos.employeeBUS();
+            dt = emplBUS.CheckEmp(id4_txt.Text);
+            int count = 0;
+            int monthSelected = Convert.ToInt32(month_cbBox.Text);
+            int monthColumn = (((monthSelected - 1) * 2) + 6);
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    string temp;
+                    temp = item.ToString();
+                    switch (count)
+                    {
+                        case 0:
+                            id5_txt.Text = temp;
+                            break;
+                        case 1:
+                            name4_txt.Text = temp;
+                            break;
+                        case 2:
+                            phone4_txt.Text = temp;
+                            break;
+                        case 3:
+                            email4_txt.Text = temp;
+                            break;
+                        case 4:
+                            baseSalary_txt.Text = temp;
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            if(count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 7:
+                            break;
+                        case 8:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 9:
+                            break;
+                        case 10:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 11:
+                            break;
+                        case 12:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 13:
+                            break;
+                        case 14:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 15:
+                            break;
+                        case 16:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 17:
+                            break;
+                        case 18:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 19:
+                            break;
+                        case 20:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 21:
+                            break;
+                        case 22:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 23:
+                            break;
+                        case 24:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 25:
+                            break;
+                        case 26:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 27:
+                            break;
+                        case 28:
+                            if (count == monthColumn)
+                            {
+                                dayOfMonth_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                    }
+                    count++;
+                }
+            }
+            id1_txt.Clear();
+            id2_txt.Clear();
+            id3_txt.Clear();
+            id4_txt.Clear();
+
+        }
     }
 }
