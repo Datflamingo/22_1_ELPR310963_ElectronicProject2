@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -43,6 +45,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.setTime_btn = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.second_txt = new System.Windows.Forms.TextBox();
             this.minute_txt = new System.Windows.Forms.TextBox();
             this.hour_txt = new System.Windows.Forms.TextBox();
@@ -61,18 +70,11 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.pmWorkingTime_txt = new System.Windows.Forms.TextBox();
             this.amWorkingTime_txt = new System.Windows.Forms.TextBox();
-            this.setTime_btn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -95,9 +97,26 @@
             // 
             // menuToolStripMenuItem
             // 
+            this.menuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripMenuItem3});
             this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
             this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem2.Text = "Management";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // toolStripMenuItem3
+            // 
+            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 26);
+            this.toolStripMenuItem3.Text = "Close";
+            this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -110,8 +129,9 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(225, 26);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem1.Text = "About";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // panel2
             // 
@@ -234,6 +254,71 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(318, 245);
             this.panel1.TabIndex = 4;
+            // 
+            // setTime_btn
+            // 
+            this.setTime_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.setTime_btn.Location = new System.Drawing.Point(85, 208);
+            this.setTime_btn.Name = "setTime_btn";
+            this.setTime_btn.Size = new System.Drawing.Size(175, 34);
+            this.setTime_btn.TabIndex = 18;
+            this.setTime_btn.Text = "APPLY";
+            this.setTime_btn.UseVisualStyleBackColor = true;
+            this.setTime_btn.Click += new System.EventHandler(this.setTime_btn_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(8, 185);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(64, 16);
+            this.label16.TabIndex = 17;
+            this.label16.Text = "SECOND";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(10, 154);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(59, 16);
+            this.label15.TabIndex = 16;
+            this.label15.Text = "MINUTE";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 126);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(47, 16);
+            this.label14.TabIndex = 15;
+            this.label14.Text = "HOUR";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(8, 98);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(35, 16);
+            this.label13.TabIndex = 14;
+            this.label13.Text = "DAY";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(8, 70);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 16);
+            this.label12.TabIndex = 13;
+            this.label12.Text = "MONTH";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(8, 45);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(44, 16);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "YEAR";
             // 
             // second_txt
             // 
@@ -368,60 +453,6 @@
             this.id_txt.TabIndex = 0;
             this.id_txt.TextChanged += new System.EventHandler(this.id_txt_TextChanged);
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(8, 45);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(44, 16);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "YEAR";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(8, 70);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 16);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "MONTH";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(8, 98);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(35, 16);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "DAY";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(8, 126);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(47, 16);
-            this.label14.TabIndex = 15;
-            this.label14.Text = "HOUR";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(10, 154);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(59, 16);
-            this.label15.TabIndex = 16;
-            this.label15.Text = "MINUTE";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(8, 185);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(64, 16);
-            this.label16.TabIndex = 17;
-            this.label16.Text = "SECOND";
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -467,17 +498,6 @@
             this.amWorkingTime_txt.Name = "amWorkingTime_txt";
             this.amWorkingTime_txt.Size = new System.Drawing.Size(226, 22);
             this.amWorkingTime_txt.TabIndex = 6;
-            // 
-            // setTime_btn
-            // 
-            this.setTime_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.setTime_btn.Location = new System.Drawing.Point(85, 208);
-            this.setTime_btn.Name = "setTime_btn";
-            this.setTime_btn.Size = new System.Drawing.Size(175, 34);
-            this.setTime_btn.TabIndex = 18;
-            this.setTime_btn.Text = "APPLY";
-            this.setTime_btn.UseVisualStyleBackColor = true;
-            this.setTime_btn.Click += new System.EventHandler(this.setTime_btn_Click);
             // 
             // formMain
             // 
@@ -555,5 +575,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox pmWorkingTime_txt;
         private System.Windows.Forms.TextBox amWorkingTime_txt;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
     }
 }

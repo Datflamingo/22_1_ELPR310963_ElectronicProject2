@@ -33,3 +33,5 @@ D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug
 D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.exe
 D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.pdb
 D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.formManagement.resources
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.AboutMe.resources
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.formLogin.resources

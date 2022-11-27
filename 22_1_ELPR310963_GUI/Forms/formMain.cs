@@ -404,5 +404,28 @@ namespace DA2_CHAM_CONG.Forms
         {
             timeCheckIn_txt.Text = VirtualTime();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            formManagement openOtherForm = new formManagement();
+            this.Hide();
+            openOtherForm.ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            AboutMe openOtherForm = new AboutMe();
+            this.Hide();
+            openOtherForm.ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -227,5 +227,27 @@ namespace DA2_CHAM_CONG.Forms
             GetAllInformation();
         }
 
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            formMain openOtherForm = new formMain();
+            this.Hide();
+            openOtherForm.ShowDialog();
+            this.Close();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void About_Click(object sender, EventArgs e)
+        {
+            serialPort1.Close();
+            AboutMe openOtherForm = new AboutMe();
+            this.Hide();
+            openOtherForm.ShowDialog();
+            this.Close();
+        }
     }
 }

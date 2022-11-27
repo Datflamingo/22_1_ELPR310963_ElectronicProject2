@@ -17,7 +17,7 @@ namespace DA2_CHAM_CONG
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formMain());
+            Application.Run(new formLogin());
         }
     }
 }
