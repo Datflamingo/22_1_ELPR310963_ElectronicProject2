@@ -59,6 +59,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.checkid2_txt = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.edit_btn = new System.Windows.Forms.Button();
             this.phone2_txt = new System.Windows.Forms.TextBox();
@@ -73,6 +74,7 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.checkid3_txt = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.remove_btn = new System.Windows.Forms.Button();
             this.phone3_txt = new System.Windows.Forms.TextBox();
@@ -99,8 +101,9 @@
             this.label14 = new System.Windows.Forms.Label();
             this.id4_txt = new System.Windows.Forms.TextBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.checkid3_txt = new System.Windows.Forms.Button();
-            this.checkid2_txt = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -121,6 +124,7 @@
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -435,6 +439,17 @@
             this.panel9.Size = new System.Drawing.Size(710, 377);
             this.panel9.TabIndex = 8;
             // 
+            // checkid2_txt
+            // 
+            this.checkid2_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkid2_txt.Location = new System.Drawing.Point(150, 136);
+            this.checkid2_txt.Name = "checkid2_txt";
+            this.checkid2_txt.Size = new System.Drawing.Size(185, 30);
+            this.checkid2_txt.TabIndex = 15;
+            this.checkid2_txt.Text = "CHECK ID";
+            this.checkid2_txt.UseVisualStyleBackColor = true;
+            this.checkid2_txt.Click += new System.EventHandler(this.checkid2_txt_Click);
+            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -572,6 +587,17 @@
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(710, 377);
             this.panel10.TabIndex = 8;
+            // 
+            // checkid3_txt
+            // 
+            this.checkid3_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkid3_txt.Location = new System.Drawing.Point(151, 136);
+            this.checkid3_txt.Name = "checkid3_txt";
+            this.checkid3_txt.Size = new System.Drawing.Size(185, 30);
+            this.checkid3_txt.TabIndex = 14;
+            this.checkid3_txt.Text = "CHECK ID";
+            this.checkid3_txt.UseVisualStyleBackColor = true;
+            this.checkid3_txt.Click += new System.EventHandler(this.checkid3_txt_Click);
             // 
             // dataGridView3
             // 
@@ -809,33 +835,36 @@
             this.id4_txt.Size = new System.Drawing.Size(265, 22);
             this.id4_txt.TabIndex = 4;
             // 
-            // checkid3_txt
+            // menuStrip1
             // 
-            this.checkid3_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkid3_txt.Location = new System.Drawing.Point(151, 136);
-            this.checkid3_txt.Name = "checkid3_txt";
-            this.checkid3_txt.Size = new System.Drawing.Size(185, 30);
-            this.checkid3_txt.TabIndex = 14;
-            this.checkid3_txt.Text = "CHECK ID";
-            this.checkid3_txt.UseVisualStyleBackColor = true;
-            this.checkid3_txt.Click += new System.EventHandler(this.checkid3_txt_Click);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1194, 28);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // checkid2_txt
+            // menuToolStripMenuItem
             // 
-            this.checkid2_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkid2_txt.Location = new System.Drawing.Point(150, 136);
-            this.checkid2_txt.Name = "checkid2_txt";
-            this.checkid2_txt.Size = new System.Drawing.Size(185, 30);
-            this.checkid2_txt.TabIndex = 15;
-            this.checkid2_txt.Text = "CHECK ID";
-            this.checkid2_txt.UseVisualStyleBackColor = true;
-            this.checkid2_txt.Click += new System.EventHandler(this.checkid2_txt_Click);
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
+            this.menuToolStripMenuItem.Text = "Menu";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Text = "Help";
             // 
             // formManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1194, 630);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -871,7 +900,10 @@
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -949,5 +981,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button checkid3_txt;
         private System.Windows.Forms.Button checkid2_txt;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
