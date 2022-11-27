@@ -165,9 +165,9 @@ namespace DA2_CHAM_CONG.Forms
             }
         }
 
-        string[] datesBefore;
-        string[] datesAfter;
-        int[] LastDates;
+        string[] datesBefore = { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", };
+        string[] datesAfter = { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", };
+        int[] LastDates = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         private void id_txt_TextChanged(object sender, EventArgs e)
         {
             timeCheckIn_txt.Text = Time();
@@ -267,11 +267,18 @@ namespace DA2_CHAM_CONG.Forms
                             LastDates[11] = Convert.ToInt32(datesBefore) + 1;
                             break;
                     }
-                    for (int count = 0; count < 12; count++)
-                    {
-                        datesAfter[count] = Convert.ToString(LastDates[count]);
-                    }
-
+                    datesAfter[0] = Convert.ToString(LastDates[0]);
+                    datesAfter[1] = Convert.ToString(LastDates[1]);
+                    datesAfter[2] = Convert.ToString(LastDates[2]);
+                    datesAfter[3] = Convert.ToString(LastDates[3]);
+                    datesAfter[4] = Convert.ToString(LastDates[4]);
+                    datesAfter[5] = Convert.ToString(LastDates[5]);
+                    datesAfter[6] = Convert.ToString(LastDates[6]);
+                    datesAfter[7] = Convert.ToString(LastDates[7]);
+                    datesAfter[8] = Convert.ToString(LastDates[8]);
+                    datesAfter[9] = Convert.ToString(LastDates[9]);
+                    datesAfter[10] = Convert.ToString(LastDates[10]);
+                    datesAfter[11] = Convert.ToString(LastDates[11]);
                 }
             }
             emplBUS.attendacne(str_dataFromSerialPort_int64, datesAfter[0], datesAfter[1], datesAfter[2], datesAfter[3], datesAfter[4], datesAfter[5], datesAfter[6], datesAfter[7], datesAfter[8], datesAfter[9], datesAfter[10], datesAfter[11]);

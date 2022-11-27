@@ -22,7 +22,7 @@ namespace DA2_CHAM_CONG.daos
 
         public void Attendance(String id, String Jan_act, String Feb_act, String Mar_act, String Apr_act, String May_act, String Jun_act, String Jul_act, String Aug_act, String Sep_act, String Oct_act, String Nov_act, String Dec_act)
         {
-            const string sql = "update ATTENDANCE set Jan_act = @Jan_act, Feb_act = @Feb_act, Mar_act = @Mar_act, Apr_act = @Apr_act, May_act = @May_act, Jun_act = @Jun_act, Jul_act = @Jul_act, Aug_act = @Aug_act, Sep_act = @Sep_act, Oct_act = @Oct_act, Nov_act = @Nov_act, Dec_act = @Dec_act, where id = @id";
+            const string sql = "update ATTENDANCE set Jan_act = @Jan_act, Feb_act = @Feb_act, Mar_act = @Mar_act, Apr_act = @Apr_act, May_act = @May_act, Jun_act = @Jun_act, Jul_act = @Jul_act, Aug_act = @Aug_act, Sep_act = @Sep_act, Oct_act = @Oct_act, Nov_act = @Nov_act, Dec_act = @Dec_act where id = @id";
             SqlParameter[] sqlParameters = new SqlParameter[13];
             sqlParameters[0] = new SqlParameter("@Jan_act", SqlDbType.Int);
             sqlParameters[0].Value = Convert.ToString(Jan_act);
