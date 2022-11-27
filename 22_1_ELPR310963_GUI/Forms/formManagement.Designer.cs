@@ -89,8 +89,7 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.view_btn = new System.Windows.Forms.Button();
             this.phone4_txt = new System.Windows.Forms.TextBox();
             this.email4_txt = new System.Windows.Forms.TextBox();
             this.name4_txt = new System.Windows.Forms.TextBox();
@@ -107,6 +106,15 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.About = new System.Windows.Forms.ToolStripMenuItem();
+            this.label4 = new System.Windows.Forms.Label();
+            this.id5_txt = new System.Windows.Forms.TextBox();
+            this.month_cbBox = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.dayOfMonth_txt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.baseSalary_txt = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -126,8 +134,8 @@
             this.tabPage3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.panel12.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -726,56 +734,47 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.button1);
-            this.panel11.Controls.Add(this.dataGridView4);
+            this.panel11.Controls.Add(this.label5);
+            this.panel11.Controls.Add(this.month_cbBox);
+            this.panel11.Controls.Add(this.id5_txt);
+            this.panel11.Controls.Add(this.view_btn);
             this.panel11.Controls.Add(this.phone4_txt);
             this.panel11.Controls.Add(this.email4_txt);
             this.panel11.Controls.Add(this.name4_txt);
-            this.panel11.Controls.Add(this.label24);
-            this.panel11.Controls.Add(this.label25);
-            this.panel11.Controls.Add(this.label26);
+            this.panel11.Controls.Add(this.panel12);
             this.panel11.Location = new System.Drawing.Point(22, 112);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(710, 377);
             this.panel11.TabIndex = 8;
             // 
-            // button1
+            // view_btn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(151, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(414, 30);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "VIEW";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(14, 180);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(693, 150);
-            this.dataGridView4.TabIndex = 13;
+            this.view_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.view_btn.Location = new System.Drawing.Point(151, 36);
+            this.view_btn.Name = "view_btn";
+            this.view_btn.Size = new System.Drawing.Size(414, 30);
+            this.view_btn.TabIndex = 14;
+            this.view_btn.Text = "VIEW";
+            this.view_btn.UseVisualStyleBackColor = true;
+            this.view_btn.Click += new System.EventHandler(this.button1_Click);
             // 
             // phone4_txt
             // 
-            this.phone4_txt.Location = new System.Drawing.Point(300, 53);
+            this.phone4_txt.Location = new System.Drawing.Point(300, 187);
             this.phone4_txt.Name = "phone4_txt";
             this.phone4_txt.Size = new System.Drawing.Size(265, 22);
             this.phone4_txt.TabIndex = 11;
             // 
             // email4_txt
             // 
-            this.email4_txt.Location = new System.Drawing.Point(300, 90);
+            this.email4_txt.Location = new System.Drawing.Point(300, 224);
             this.email4_txt.Name = "email4_txt";
             this.email4_txt.Size = new System.Drawing.Size(265, 22);
             this.email4_txt.TabIndex = 10;
             // 
             // name4_txt
             // 
-            this.name4_txt.Location = new System.Drawing.Point(300, 9);
+            this.name4_txt.Location = new System.Drawing.Point(300, 143);
             this.name4_txt.Name = "name4_txt";
             this.name4_txt.Size = new System.Drawing.Size(265, 22);
             this.name4_txt.TabIndex = 9;
@@ -784,7 +783,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(147, 9);
+            this.label24.Location = new System.Drawing.Point(57, 67);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(61, 24);
             this.label24.TabIndex = 8;
@@ -794,7 +793,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(147, 53);
+            this.label25.Location = new System.Drawing.Point(57, 109);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(66, 24);
             this.label25.TabIndex = 7;
@@ -804,7 +803,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(147, 94);
+            this.label26.Location = new System.Drawing.Point(57, 148);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(57, 24);
             this.label26.TabIndex = 6;
@@ -862,14 +861,14 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(168, 26);
             this.toolStripMenuItem1.Text = "Attendance";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(168, 26);
             this.toolStripMenuItem2.Text = "Close";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
@@ -884,9 +883,94 @@
             // About
             // 
             this.About.Name = "About";
-            this.About.Size = new System.Drawing.Size(224, 26);
+            this.About.Size = new System.Drawing.Size(133, 26);
             this.About.Text = "About";
             this.About.Click += new System.EventHandler(this.About_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(57, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 24);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Empoyee Id";
+            // 
+            // id5_txt
+            // 
+            this.id5_txt.Location = new System.Drawing.Point(300, 98);
+            this.id5_txt.Name = "id5_txt";
+            this.id5_txt.Size = new System.Drawing.Size(265, 22);
+            this.id5_txt.TabIndex = 15;
+            // 
+            // month_cbBox
+            // 
+            this.month_cbBox.FormattingEnabled = true;
+            this.month_cbBox.Location = new System.Drawing.Point(300, 6);
+            this.month_cbBox.Name = "month_cbBox";
+            this.month_cbBox.Size = new System.Drawing.Size(265, 24);
+            this.month_cbBox.TabIndex = 16;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(147, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 24);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Month";
+            // 
+            // panel12
+            // 
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Controls.Add(this.label28);
+            this.panel12.Controls.Add(this.baseSalary_txt);
+            this.panel12.Controls.Add(this.label6);
+            this.panel12.Controls.Add(this.dayOfMonth_txt);
+            this.panel12.Controls.Add(this.label26);
+            this.panel12.Controls.Add(this.label4);
+            this.panel12.Controls.Add(this.label25);
+            this.panel12.Controls.Add(this.label24);
+            this.panel12.Location = new System.Drawing.Point(28, 76);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(655, 298);
+            this.panel12.TabIndex = 18;
+            // 
+            // dayOfMonth_txt
+            // 
+            this.dayOfMonth_txt.Location = new System.Drawing.Point(272, 236);
+            this.dayOfMonth_txt.Name = "dayOfMonth_txt";
+            this.dayOfMonth_txt.Size = new System.Drawing.Size(265, 22);
+            this.dayOfMonth_txt.TabIndex = 19;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(57, 234);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(195, 24);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Working Day of Month";
+            // 
+            // baseSalary_txt
+            // 
+            this.baseSalary_txt.Location = new System.Drawing.Point(272, 193);
+            this.baseSalary_txt.Name = "baseSalary_txt";
+            this.baseSalary_txt.Size = new System.Drawing.Size(265, 22);
+            this.baseSalary_txt.TabIndex = 22;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(57, 191);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(108, 24);
+            this.label28.TabIndex = 23;
+            this.label28.Text = "Base Salary";
             // 
             // formManagement
             // 
@@ -928,9 +1012,10 @@
             this.panel7.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1000,14 +1085,13 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.TextBox phone4_txt;
         private System.Windows.Forms.TextBox email4_txt;
         private System.Windows.Forms.TextBox name4_txt;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button view_btn;
         private System.Windows.Forms.Button checkid3_txt;
         private System.Windows.Forms.Button checkid2_txt;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -1016,5 +1100,14 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem About;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox month_cbBox;
+        private System.Windows.Forms.TextBox id5_txt;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox dayOfMonth_txt;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox baseSalary_txt;
     }
 }
