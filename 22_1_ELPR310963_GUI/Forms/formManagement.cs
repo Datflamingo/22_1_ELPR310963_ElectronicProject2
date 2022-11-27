@@ -68,7 +68,7 @@ namespace DA2_CHAM_CONG.Forms
             if (!serialPort1.IsOpen)
             {
                 serialPort1.PortName = comPort_cbBox.Text;
-                serialPort1.BaudRate = Convert.ToInt32(baudRate_cbBox.Text);
+                serialPort1.BaudRate = Convert.ToInt16(baudRate_cbBox.Text);
                 serialPort1.Open();
                 cnnStatus_label.Text = ("Connected");
                 cnnStatus_label.ForeColor = Color.Green;
@@ -144,6 +144,7 @@ namespace DA2_CHAM_CONG.Forms
         {
             var emplBUS = new daos.employeeBUS();
             emplBUS.removeEmp(id2_txt.Text);
+            id3_txt.Clear();
             GetAllInformation();
         }
 
@@ -225,5 +226,6 @@ namespace DA2_CHAM_CONG.Forms
             }
             GetAllInformation();
         }
+
     }
 }
