@@ -75,6 +75,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.pmWorkingTime_txt = new System.Windows.Forms.TextBox();
             this.amWorkingTime_txt = new System.Windows.Forms.TextBox();
+            this.idDisplayed_txt = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -129,7 +130,7 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(133, 26);
             this.toolStripMenuItem1.Text = "About";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
@@ -375,6 +376,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.Controls.Add(this.idDisplayed_txt);
             this.panel3.Controls.Add(this.label10);
             this.panel3.Controls.Add(this.employeeIn4_grid);
             this.panel3.Controls.Add(this.label7);
@@ -447,7 +449,7 @@
             // 
             // id_txt
             // 
-            this.id_txt.Location = new System.Drawing.Point(342, 110);
+            this.id_txt.Location = new System.Drawing.Point(342, 290);
             this.id_txt.Name = "id_txt";
             this.id_txt.Size = new System.Drawing.Size(265, 22);
             this.id_txt.TabIndex = 0;
@@ -498,6 +500,13 @@
             this.amWorkingTime_txt.Name = "amWorkingTime_txt";
             this.amWorkingTime_txt.Size = new System.Drawing.Size(226, 22);
             this.amWorkingTime_txt.TabIndex = 6;
+            // 
+            // idDisplayed_txt
+            // 
+            this.idDisplayed_txt.Location = new System.Drawing.Point(342, 112);
+            this.idDisplayed_txt.Name = "idDisplayed_txt";
+            this.idDisplayed_txt.Size = new System.Drawing.Size(265, 22);
+            this.idDisplayed_txt.TabIndex = 8;
             // 
             // formMain
             // 
@@ -577,5 +586,6 @@
         private System.Windows.Forms.TextBox amWorkingTime_txt;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
+        private System.Windows.Forms.TextBox idDisplayed_txt;
     }
 }
