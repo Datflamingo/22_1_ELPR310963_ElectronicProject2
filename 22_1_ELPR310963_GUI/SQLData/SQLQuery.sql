@@ -3,7 +3,7 @@ go
 
 use DA2_CHAM_CONG_NHAN_VIEN
 go
-create table dbo.CHAM_CONG_TINH_LUONG
+create table dbo.ATTENDANCE
 (
 	id bigint NOT nULL,
 	Name nvarchar(50) NOT nULL,
@@ -47,6 +47,22 @@ create table dbo.CHAM_CONG_TINH_LUONG
 	Dec_act int,
 	Dec_Sal bigint,
 )
-
+create table dbo.LATE
+(
+	id bigint,
+	name nvarchar(50),
+	Late_Jan int,
+	Late_Feb int,
+	Late_Mar int,
+	Late_Apr int,
+	Late_May int,
+	Late_Jun int,
+	Late_Jul int,
+	Late_Aug int,
+	Late_Sep int,
+	Late_Oct int,
+	Late_Nov int,
+	Late_Dec int,
+)
 insert into CHAM_CONG_TINH_LUONG values (123456, 'NGUYEN THANH DAT', '0978479721', 'Dat.NguyenThanh2@vn.bosch.com', 14000000);
 go

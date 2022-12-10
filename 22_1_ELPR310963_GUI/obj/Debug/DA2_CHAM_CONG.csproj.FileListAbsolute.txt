@@ -35,3 +35,17 @@ D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug
 D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.formManagement.resources
 D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.AboutMe.resources
 D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.formLogin.resources
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\bin\Debug\DA2_CHAM_CONG.exe.config
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\bin\Debug\DA2_CHAM_CONG.exe
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\bin\Debug\DA2_CHAM_CONG.pdb
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.csproj.AssemblyReference.cache
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.csproj.SuggestedBindingRedirects.cache
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.AboutMe.resources
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.formLogin.resources
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.formMain.resources
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Forms.formManagement.resources
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.Properties.Resources.resources
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.csproj.GenerateResource.cache
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.csproj.CoreCompileInputs.cache
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.exe
+D:\Study\GitHub\22_1_ELPR310963_ElectronicProject2_2\22_1_ELPR310963_GUI\obj\Debug\DA2_CHAM_CONG.pdb

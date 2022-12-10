@@ -100,6 +100,7 @@ namespace DA2_CHAM_CONG.Forms
                 str_dataFromSerialPort_int64 = InputData;
                 ID = Convert.ToInt64(str_dataFromSerialPort_int64);
                 this.id_txt.Text += text;
+                this.idDisplayed_txt.Text += text;
             }
 
         }
@@ -199,6 +200,7 @@ namespace DA2_CHAM_CONG.Forms
         //Main Activity when someone checkin
         private void id_txt_TextChanged(object sender, EventArgs e)
         {
+            idDisplayed_txt.Clear();
             DataTable dt = new DataTable();
             var emplBUS = new daos.employeeBUS();
             dt = emplBUS.CheckEmp(str_dataFromSerialPort_int64);
