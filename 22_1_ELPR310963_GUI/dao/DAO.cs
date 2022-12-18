@@ -227,6 +227,9 @@ namespace DA2_CHAM_CONG.daos
             return employeeDAO.CheckID(id);
         }
 
-
+        public DataTable CheckLateEmp(String id)
+        {
+            return employeeDAO.CheckIDLate(id);
+        }
     }
 }
