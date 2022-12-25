@@ -81,6 +81,14 @@ namespace DA2_CHAM_CONG.Forms
             return thismonth_use;
         }
 
+        public int VirtualThisMonth4Late()
+        {
+            int month = Convert.ToInt16(month_txt.Text);
+            int thismonthColumn = (Convert.ToInt32(month) + 1);
+            int thismonth_use = thismonthColumn;
+            return thismonth_use;
+        }
+
         //Connect to Arduino
         //Recieve Data
 
@@ -100,6 +108,7 @@ namespace DA2_CHAM_CONG.Forms
                 str_dataFromSerialPort_int64 = InputData;
                 ID = Convert.ToInt64(str_dataFromSerialPort_int64);
                 this.id_txt.Text += text;
+                this.idDisplayed_txt.Text += text;
             }
 
         }
@@ -192,18 +201,26 @@ namespace DA2_CHAM_CONG.Forms
             }
         }
 
+        //difine dates-calculated arrays
         string[] datesBefore = { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", };
         string[] datesAfter = { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", };
+        string[] lateDatesAfter = { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", };
+        string[] lateDatesBefore = { "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", };
         int[] LastDates = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
-        
+        int[] LastLateDates = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
         //Main Activity when someone checkin
         private void id_txt_TextChanged(object sender, EventArgs e)
         {
+            idDisplayed_txt.Clear();
             DataTable dt = new DataTable();
+            DataTable dtLate = new DataTable();
             var emplBUS = new daos.employeeBUS();
             dt = emplBUS.CheckEmp(str_dataFromSerialPort_int64);
+            dtLate = emplBUS.CheckLateEmp(str_dataFromSerialPort_int64);
             int count = 0;
+            int count4Late = 0;
             int thisMonthRef = VirtualThisMonth();
+            int thisMonthRef4Late = VirtualThisMonth4Late();
             foreach (DataRow dataRow in dt.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -381,7 +398,7 @@ namespace DA2_CHAM_CONG.Forms
                     }
                     count++;
 
-                    //Assign data for each month
+                    //Assign data for each month in Attendance table
                     datesAfter[0] = Convert.ToString(LastDates[0]);
                     datesAfter[1] = Convert.ToString(LastDates[1]);
                     datesAfter[2] = Convert.ToString(LastDates[2]);
@@ -396,7 +413,175 @@ namespace DA2_CHAM_CONG.Forms
                     datesAfter[11] = Convert.ToString(LastDates[11]);
                 }
             }
+
+            foreach (DataRow dataRow in dtLate.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    string temp;
+                    temp = item.ToString();
+                    if((Convert.ToInt32(hour_txt.Text) > 7) || ((Convert.ToInt32(hour_txt.Text) == 7) && (Convert.ToInt32(second_txt.Text) > 0)))
+                    {
+                        switch (count4Late)
+                        {
+                            case 0:
+                                break;
+                            case 1:
+                                break;
+                            case 2:
+                                lateDatesBefore[0] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[0] = Convert.ToInt16(lateDatesBefore[0]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[0] = Convert.ToInt16(lateDatesBefore[0]);
+                                }
+                                break;
+                            case 3:
+                                lateDatesBefore[1] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[1] = Convert.ToInt16(lateDatesBefore[1]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[1] = Convert.ToInt16(lateDatesBefore[1]);
+                                }
+                                break;
+                            case 4:
+                                lateDatesBefore[2] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[2] = Convert.ToInt16(lateDatesBefore[2]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[2] = Convert.ToInt16(lateDatesBefore[2]);
+                                }
+                                break;
+                            case 5:
+                                lateDatesBefore[3] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[3] = Convert.ToInt16(lateDatesBefore[3]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[3] = Convert.ToInt16(lateDatesBefore[3]);
+                                }
+                                break;
+                            case 6:
+                                lateDatesBefore[4] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[4] = Convert.ToInt16(lateDatesBefore[4]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[4] = Convert.ToInt16(lateDatesBefore[4]);
+                                }
+                                break;
+                            case 7:
+                                lateDatesBefore[5] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[5] = Convert.ToInt16(lateDatesBefore[5]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[5] = Convert.ToInt16(lateDatesBefore[5]);
+                                }
+                                break;
+                            case 8:
+                                lateDatesBefore[6] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[6] = Convert.ToInt16(lateDatesBefore[6]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[6] = Convert.ToInt16(lateDatesBefore[6]);
+                                }
+                                break;
+                            case 9:
+                                lateDatesBefore[7] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[7] = Convert.ToInt16(lateDatesBefore[7]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[7] = Convert.ToInt16(lateDatesBefore[7]);
+                                }
+                                break;
+                            case 10:
+                                lateDatesBefore[8] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[8] = Convert.ToInt16(lateDatesBefore[8]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[8] = Convert.ToInt16(lateDatesBefore[8]);
+                                }
+                                break;
+                            case 11:
+                                lateDatesBefore[9] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[9] = Convert.ToInt16(lateDatesBefore[9]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[9] = Convert.ToInt16(lateDatesBefore[9]);
+                                }
+                                break;
+                            case 12:
+                                lateDatesBefore[10] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[10] = Convert.ToInt16(lateDatesBefore[10]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[10] = Convert.ToInt16(lateDatesBefore[10]);
+                                }
+                                break;
+                            case 13:
+                                lateDatesBefore[11] = temp;
+                                if (count4Late == thisMonthRef4Late)
+                                {
+                                    LastLateDates[11] = Convert.ToInt16(lateDatesBefore[11]) + 1;
+                                }
+                                else
+                                {
+                                    LastLateDates[11] = Convert.ToInt16(lateDatesBefore[11]);
+                                }
+                                break;
+                        }
+                        count4Late++;
+
+                        //Assign data for each month in late table
+                        lateDatesAfter[0] = Convert.ToString(LastLateDates[0]);
+                        lateDatesAfter[1] = Convert.ToString(LastLateDates[1]);
+                        lateDatesAfter[2] = Convert.ToString(LastLateDates[2]);
+                        lateDatesAfter[3] = Convert.ToString(LastLateDates[3]);
+                        lateDatesAfter[4] = Convert.ToString(LastLateDates[4]);
+                        lateDatesAfter[5] = Convert.ToString(LastLateDates[5]);
+                        lateDatesAfter[6] = Convert.ToString(LastLateDates[6]);
+                        lateDatesAfter[7] = Convert.ToString(LastLateDates[7]);
+                        lateDatesAfter[8] = Convert.ToString(LastLateDates[8]);
+                        lateDatesAfter[9] = Convert.ToString(LastLateDates[9]);
+                        lateDatesAfter[10] = Convert.ToString(LastLateDates[10]);
+                        lateDatesAfter[11] = Convert.ToString(LastLateDates[11]);
+                    }
+                }
+            }
             emplBUS.attendacne(str_dataFromSerialPort_int64, datesAfter[0], datesAfter[1], datesAfter[2], datesAfter[3], datesAfter[4], datesAfter[5], datesAfter[6], datesAfter[7], datesAfter[8], datesAfter[9], datesAfter[10], datesAfter[11]);
+            emplBUS.late(str_dataFromSerialPort_int64, lateDatesAfter[0], lateDatesAfter[1], lateDatesAfter[2], lateDatesAfter[3], lateDatesAfter[4], lateDatesAfter[5], lateDatesAfter[6], lateDatesAfter[7], lateDatesAfter[8], lateDatesAfter[9], lateDatesAfter[10], lateDatesAfter[11]);
+
             GetAllInformation();
         }
 

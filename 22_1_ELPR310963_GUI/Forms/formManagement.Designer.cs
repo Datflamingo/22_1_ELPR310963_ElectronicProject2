@@ -89,13 +89,23 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.month_cbBox = new System.Windows.Forms.ComboBox();
+            this.id5_txt = new System.Windows.Forms.TextBox();
             this.view_btn = new System.Windows.Forms.Button();
             this.phone4_txt = new System.Windows.Forms.TextBox();
             this.email4_txt = new System.Windows.Forms.TextBox();
             this.name4_txt = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.baseSalary_txt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dayOfMonth_txt = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.id4_txt = new System.Windows.Forms.TextBox();
@@ -106,15 +116,8 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.About = new System.Windows.Forms.ToolStripMenuItem();
-            this.label4 = new System.Windows.Forms.Label();
-            this.id5_txt = new System.Windows.Forms.TextBox();
-            this.month_cbBox = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.dayOfMonth_txt = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.baseSalary_txt = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
+            this.Late_txt = new System.Windows.Forms.TextBox();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -134,8 +137,8 @@
             this.tabPage3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel11.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -747,6 +750,31 @@
             this.panel11.Size = new System.Drawing.Size(710, 377);
             this.panel11.TabIndex = 8;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(147, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 24);
+            this.label5.TabIndex = 17;
+            this.label5.Text = "Month";
+            // 
+            // month_cbBox
+            // 
+            this.month_cbBox.FormattingEnabled = true;
+            this.month_cbBox.Location = new System.Drawing.Point(300, 6);
+            this.month_cbBox.Name = "month_cbBox";
+            this.month_cbBox.Size = new System.Drawing.Size(265, 24);
+            this.month_cbBox.TabIndex = 16;
+            // 
+            // id5_txt
+            // 
+            this.id5_txt.Location = new System.Drawing.Point(300, 98);
+            this.id5_txt.Name = "id5_txt";
+            this.id5_txt.Size = new System.Drawing.Size(265, 22);
+            this.id5_txt.TabIndex = 15;
+            // 
             // view_btn
             // 
             this.view_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -779,15 +807,89 @@
             this.name4_txt.Size = new System.Drawing.Size(265, 22);
             this.name4_txt.TabIndex = 9;
             // 
-            // label24
+            // panel12
             // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(57, 67);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(61, 24);
-            this.label24.TabIndex = 8;
-            this.label24.Text = "Name";
+            this.panel12.BackColor = System.Drawing.Color.White;
+            this.panel12.Controls.Add(this.Late_txt);
+            this.panel12.Controls.Add(this.label27);
+            this.panel12.Controls.Add(this.label28);
+            this.panel12.Controls.Add(this.baseSalary_txt);
+            this.panel12.Controls.Add(this.label6);
+            this.panel12.Controls.Add(this.dayOfMonth_txt);
+            this.panel12.Controls.Add(this.label26);
+            this.panel12.Controls.Add(this.label4);
+            this.panel12.Controls.Add(this.label25);
+            this.panel12.Controls.Add(this.label24);
+            this.panel12.Controls.Add(this.panel13);
+            this.panel12.Location = new System.Drawing.Point(28, 76);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(655, 298);
+            this.panel12.TabIndex = 18;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.BackColor = System.Drawing.Color.Firebrick;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(57, 262);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(235, 24);
+            this.label27.TabIndex = 24;
+            this.label27.Text = "Late Working Day of Month";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(57, 191);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(108, 24);
+            this.label28.TabIndex = 23;
+            this.label28.Text = "Base Salary";
+            // 
+            // baseSalary_txt
+            // 
+            this.baseSalary_txt.Location = new System.Drawing.Point(272, 193);
+            this.baseSalary_txt.Name = "baseSalary_txt";
+            this.baseSalary_txt.Size = new System.Drawing.Size(265, 22);
+            this.baseSalary_txt.TabIndex = 22;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(57, 224);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(195, 24);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Working Day of Month";
+            // 
+            // dayOfMonth_txt
+            // 
+            this.dayOfMonth_txt.Location = new System.Drawing.Point(272, 226);
+            this.dayOfMonth_txt.Name = "dayOfMonth_txt";
+            this.dayOfMonth_txt.Size = new System.Drawing.Size(265, 22);
+            this.dayOfMonth_txt.TabIndex = 19;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(57, 148);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(57, 24);
+            this.label26.TabIndex = 6;
+            this.label26.Text = "Email";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(57, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(112, 24);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Empoyee Id";
             // 
             // label25
             // 
@@ -799,15 +901,15 @@
             this.label25.TabIndex = 7;
             this.label25.Text = "Phone";
             // 
-            // label26
+            // label24
             // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(57, 148);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(57, 24);
-            this.label26.TabIndex = 6;
-            this.label26.Text = "Email";
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(57, 67);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(61, 24);
+            this.label24.TabIndex = 8;
+            this.label24.Text = "Name";
             // 
             // label13
             // 
@@ -887,90 +989,20 @@
             this.About.Text = "About";
             this.About.Click += new System.EventHandler(this.About_Click);
             // 
-            // label4
+            // Late_txt
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(57, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(112, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Empoyee Id";
+            this.Late_txt.Location = new System.Drawing.Point(298, 264);
+            this.Late_txt.Name = "Late_txt";
+            this.Late_txt.Size = new System.Drawing.Size(239, 22);
+            this.Late_txt.TabIndex = 25;
             // 
-            // id5_txt
+            // panel13
             // 
-            this.id5_txt.Location = new System.Drawing.Point(300, 98);
-            this.id5_txt.Name = "id5_txt";
-            this.id5_txt.Size = new System.Drawing.Size(265, 22);
-            this.id5_txt.TabIndex = 15;
-            // 
-            // month_cbBox
-            // 
-            this.month_cbBox.FormattingEnabled = true;
-            this.month_cbBox.Location = new System.Drawing.Point(300, 6);
-            this.month_cbBox.Name = "month_cbBox";
-            this.month_cbBox.Size = new System.Drawing.Size(265, 24);
-            this.month_cbBox.TabIndex = 16;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(147, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 24);
-            this.label5.TabIndex = 17;
-            this.label5.Text = "Month";
-            // 
-            // panel12
-            // 
-            this.panel12.BackColor = System.Drawing.Color.White;
-            this.panel12.Controls.Add(this.label28);
-            this.panel12.Controls.Add(this.baseSalary_txt);
-            this.panel12.Controls.Add(this.label6);
-            this.panel12.Controls.Add(this.dayOfMonth_txt);
-            this.panel12.Controls.Add(this.label26);
-            this.panel12.Controls.Add(this.label4);
-            this.panel12.Controls.Add(this.label25);
-            this.panel12.Controls.Add(this.label24);
-            this.panel12.Location = new System.Drawing.Point(28, 76);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(655, 298);
-            this.panel12.TabIndex = 18;
-            // 
-            // dayOfMonth_txt
-            // 
-            this.dayOfMonth_txt.Location = new System.Drawing.Point(272, 236);
-            this.dayOfMonth_txt.Name = "dayOfMonth_txt";
-            this.dayOfMonth_txt.Size = new System.Drawing.Size(265, 22);
-            this.dayOfMonth_txt.TabIndex = 19;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(57, 234);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(195, 24);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Working Day of Month";
-            // 
-            // baseSalary_txt
-            // 
-            this.baseSalary_txt.Location = new System.Drawing.Point(272, 193);
-            this.baseSalary_txt.Name = "baseSalary_txt";
-            this.baseSalary_txt.Size = new System.Drawing.Size(265, 22);
-            this.baseSalary_txt.TabIndex = 22;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(57, 191);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(108, 24);
-            this.label28.TabIndex = 23;
-            this.label28.Text = "Base Salary";
+            this.panel13.BackColor = System.Drawing.Color.Firebrick;
+            this.panel13.Location = new System.Drawing.Point(51, 254);
+            this.panel13.Name = "panel13";
+            this.panel13.Size = new System.Drawing.Size(504, 41);
+            this.panel13.TabIndex = 26;
             // 
             // formManagement
             // 
@@ -1012,10 +1044,10 @@
             this.panel7.PerformLayout();
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1109,5 +1141,8 @@
         private System.Windows.Forms.TextBox dayOfMonth_txt;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox baseSalary_txt;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox Late_txt;
+        private System.Windows.Forms.Panel panel13;
     }
 }

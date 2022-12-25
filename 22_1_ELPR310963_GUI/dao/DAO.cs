@@ -53,6 +53,39 @@ namespace DA2_CHAM_CONG.daos
             conn.executeInsertQuery(sql, sqlParameters);
         }
 
+        public void LateAttendance(String id, String Late_Jan, String Late_Feb, String Late_Mar, String Late_Apr, String Late_May, String Late_Jun, String Late_Jul, String Late_Aug, String Late_Sep, String Late_Oct, String Late_Nov, String Late_Dec)
+        {
+            const string sql = "update Late set Late_Jan = @Late_Jan, Late_Feb = @Late_Feb, Late_Mar = @Late_Mar, Late_Apr = @Late_Apr, Late_May = @Late_May, Late_Jun = @Late_Jun, Late_Jul = @Late_Jul, Late_Aug = @Late_Aug, Late_Sep = @Late_Sep, Late_Oct = @Late_Oct, Late_Nov = @Late_Nov, Late_Dec = @Late_Dec where id = @id";
+            SqlParameter[] sqlParameters = new SqlParameter[13];
+            sqlParameters[0] = new SqlParameter("@Late_Jan", SqlDbType.Int);
+            sqlParameters[0].Value = Convert.ToString(Late_Jan);
+            sqlParameters[1] = new SqlParameter("@Late_Feb", SqlDbType.Int);
+            sqlParameters[1].Value = Convert.ToString(Late_Feb);
+            sqlParameters[2] = new SqlParameter("@Late_Mar", SqlDbType.Int);
+            sqlParameters[2].Value = Convert.ToString(Late_Mar);
+            sqlParameters[3] = new SqlParameter("@Late_Apr", SqlDbType.Int);
+            sqlParameters[3].Value = Convert.ToString(Late_Apr);
+            sqlParameters[4] = new SqlParameter("@Late_May", SqlDbType.Int);
+            sqlParameters[4].Value = Convert.ToString(Late_May);
+            sqlParameters[5] = new SqlParameter("@Late_Jun", SqlDbType.Int);
+            sqlParameters[5].Value = Convert.ToString(Late_Jun);
+            sqlParameters[6] = new SqlParameter("@Late_Jul", SqlDbType.Int);
+            sqlParameters[6].Value = Convert.ToString(Late_Jul);
+            sqlParameters[7] = new SqlParameter("@Late_Aug", SqlDbType.Int);
+            sqlParameters[7].Value = Convert.ToString(Late_Aug);
+            sqlParameters[8] = new SqlParameter("@Late_Sep", SqlDbType.Int);
+            sqlParameters[8].Value = Convert.ToString(Late_Sep);
+            sqlParameters[9] = new SqlParameter("@Late_Oct", SqlDbType.Int);
+            sqlParameters[9].Value = Convert.ToString(Late_Oct);
+            sqlParameters[10] = new SqlParameter("@Late_Nov", SqlDbType.Int);
+            sqlParameters[10].Value = Convert.ToString(Late_Nov);
+            sqlParameters[11] = new SqlParameter("@Late_Dec", SqlDbType.Int);
+            sqlParameters[11].Value = Convert.ToString(Late_Dec);
+            sqlParameters[12] = new SqlParameter("@id", SqlDbType.BigInt);
+            sqlParameters[12].Value = Convert.ToString(id);
+            conn.executeInsertQuery(sql, sqlParameters);
+        }
+
         public void removeEmployee(String id)
         {
             const string sql = "delete from ATTENDANCE where id = @id";
@@ -123,6 +156,37 @@ namespace DA2_CHAM_CONG.daos
             }
             return dt;
         }
+
+        public DataTable CheckIDLate(String id)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.cnnStr))
+            {
+                string sql = "select * from LATE where id = ";
+                sql = sql + id;
+                using (SqlCommand sqlCommand = new SqlCommand(sql, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(dataReader);
+                            dataReader.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+            return dt;
+        }
     }
 
     public class employeeBUS
@@ -137,6 +201,11 @@ namespace DA2_CHAM_CONG.daos
         {
             employeeDAO.Attendance(id, Jan_act, Feb_act, Mar_act, Apr_act, May_act, Jun_act, Jul_act, Aug_act, Sep_act, Oct_act, Nov_act, Dec_act);
 
+        }
+
+        public void late(String id, String Late_Jan, String Late_Feb, String Late_Mar, String Late_Apr, String Late_May, String Late_Jun, String Late_Jul, String Late_Aug, String Late_Sep, String Late_Oct, String Late_Nov, String Late_Dec)
+        {
+            employeeDAO.LateAttendance(id, Late_Jan, Late_Feb, Late_Mar, Late_Apr, Late_May, Late_Jun, Late_Jul, Late_Aug, Late_Sep, Late_Oct, Late_Nov, Late_Dec);
         }
         public void addEmp(String id, String Name, String Phone, String Email, String Base)
         {
@@ -158,5 +227,9 @@ namespace DA2_CHAM_CONG.daos
             return employeeDAO.CheckID(id);
         }
 
+        public DataTable CheckLateEmp(String id)
+        {
+            return employeeDAO.CheckIDLate(id);
+        }
     }
 }
