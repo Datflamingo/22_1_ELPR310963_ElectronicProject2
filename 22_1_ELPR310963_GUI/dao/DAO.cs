@@ -156,6 +156,37 @@ namespace DA2_CHAM_CONG.daos
             }
             return dt;
         }
+
+        public DataTable CheckIDLate(String id)
+        {
+            DataTable dt = new DataTable();
+            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.cnnStr))
+            {
+                string sql = "select * from LATE where id = ";
+                sql = sql + id;
+                using (SqlCommand sqlCommand = new SqlCommand(sql, connection))
+                {
+                    try
+                    {
+                        connection.Open();
+                        using (SqlDataReader dataReader = sqlCommand.ExecuteReader())
+                        {
+                            dt.Load(dataReader);
+                            dataReader.Close();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+            }
+            return dt;
+        }
     }
 
     public class employeeBUS
@@ -196,5 +227,9 @@ namespace DA2_CHAM_CONG.daos
             return employeeDAO.CheckID(id);
         }
 
+        public DataTable CheckLateEmp(String id)
+        {
+            return employeeDAO.CheckIDLate(id);
+        }
     }
 }

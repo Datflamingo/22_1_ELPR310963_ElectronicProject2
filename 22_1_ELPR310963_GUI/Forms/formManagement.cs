@@ -275,11 +275,15 @@ namespace DA2_CHAM_CONG.Forms
             phone4_txt.Clear();
             email4_txt.Clear();
             DataTable dt = new DataTable();
+            DataTable dtLate = new DataTable();
             var emplBUS = new daos.employeeBUS();
             dt = emplBUS.CheckEmp(id4_txt.Text);
+            dtLate = emplBUS.CheckLateEmp(id4_txt.Text);
             int count = 0;
+            int count4Late = 0;
             int monthSelected = Convert.ToInt32(month_cbBox.Text);
             int monthColumn = (((monthSelected - 1) * 2) + 6);
+            int monthColumn4Late = monthSelected + 1;
             foreach (DataRow dataRow in dt.Rows)
             {
                 foreach (var item in dataRow.ItemArray)
@@ -438,6 +442,133 @@ namespace DA2_CHAM_CONG.Forms
                     }
                     count++;
                 }
+
+            }
+
+            foreach (DataRow dataRow in dtLate.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    string temp;
+                    temp = item.ToString();
+                    switch (count4Late)
+                    {
+                        case 0:
+                            break;
+                        case 1:
+                            break;
+                        case 2:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 3:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 4:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 5:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 6:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 7:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 8:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 9:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 10:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 11:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 12:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+                        case 13:
+                            if (count4Late == monthColumn4Late)
+                            {
+                                Late_txt.Text = temp;
+                            }
+                            else
+                            {
+                            }
+                            break;
+
+                    }
+                    count4Late++;
+                }
             }
             id1_txt.Clear();
             id2_txt.Clear();
@@ -445,5 +576,7 @@ namespace DA2_CHAM_CONG.Forms
             id4_txt.Clear();
 
         }
+
+
     }
 }

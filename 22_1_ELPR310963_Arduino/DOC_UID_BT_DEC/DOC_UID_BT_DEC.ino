@@ -24,12 +24,11 @@ void setup()
   mfrc522.PCD_Init(); // Read RFID Card
   pinMode(anodeLed_int, OUTPUT);
   pinMode(kathodeLed_int, OUTPUT);
+  digitalWrite(kathodeLed_int, LOW);
 }
 
 void loop() 
 {
-  digitalWrite(anodeLed_int, HIGH);
-  digitalWrite(kathodeLed_int, LOW);
   //Looking For New Card
   if(! mfrc522.PICC_IsNewCardPresent())
   {
@@ -47,8 +46,13 @@ void loop()
     UID[i]=mfrc522.uid.uidByte[i];
     Serial.print(UID[i],DEC);
   }
+    
   Serial.println();
   mfrc522.PICC_HaltA();
   mfrc522.PCD_StopCrypto1();
+
+  digitalWrite(anodeLed_int, HIGH);
+  delay(200);
+  digitalWrite(anodeLed_int, LOW);
 
 }
